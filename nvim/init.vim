@@ -65,12 +65,13 @@ function! NeomakeCredoErrorType(entry)
 endfunction
 
 let g:neomake_elixir_mycredo_maker = {
-\ 'exe': 'mix',
+  \ 'exe': 'mix',
   \ 'args': ['credo', 'list', '%:p', '--format=oneline'],
   \ 'errorformat': '[%t] %. %f:%l:%c %m,[%t] %. %f:%l %m',
   \ 'postprocess': function('NeomakeCredoErrorType')
   \ }
 
+colorscheme OceanicNext
 :highlight LineNr ctermfg=grey
 
 " Sane tabs
@@ -88,5 +89,6 @@ set incsearch
 set ignorecase
 " Ignore case when searching lowercase
 set smartcase
+set title
 " Stop highlighting on Enter
 map <CR> :noh<CR>
